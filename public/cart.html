@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Winkelmand – Anma Medicals</title>
+  <link rel="icon" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="usp">Gratis verzending vanaf €60 · Voor 16:00 besteld, morgen in huis · 30 dagen retour</div>
+
+  <header>
+    <a href="index.html" class="logo"><img src="img/anma-logo.png" alt="ANMA Medicals"></a>
+    <nav>
+      <a href="dames-tunieken.html">Dames</a>
+      <a href="heren-tunieken.html">Heren</a>
+      <a href="dames-tunieken.html">Tunieken</a>
+      <a href="broeken.html">Broeken</a>
+      <a href="schoenen.html">Schoenen</a>
+      <a href="sale.html">Sale</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-btn">🛒 Winkelmand (<span data-cart-count>0</span>)</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close" id="closeNav">×</button>
+    <a href="dames-tunieken.html">Dames</a>
+    <a href="heren-tunieken.html">Heren</a>
+    <a href="dames-tunieken.html">Tunieken</a>
+    <a href="broeken.html">Broeken</a>
+    <a href="schoenen.html">Schoenen</a>
+    <a href="sale.html">Sale</a>
+    <a href="cart.html">Winkelmand</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <div class="crumb"><a href="index.html">Home</a> › Winkelmand</div>
+    <h1 style="font-size:28px;margin:0 0 24px">Je winkelmand</h1>
+    <div id="cart-content"></div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:12px;display:inline-block"><img src="img/anma-logo.png" alt="ANMA Medicals" style="height:36px"></a>
+        <p>Premium medische werkkleding voor zorgprofessionals.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="dames-tunieken.html">Dames</a>
+        <a href="heren-tunieken.html">Heren</a>
+        <a href="dames-tunieken.html">Tunieken</a>
+        <a href="broeken.html">Broeken</a>
+        <a href="schoenen.html">Schoenen</a>
+        <a href="sale.html">Sale</a>
+      </div>
+      <div>
+        <h4>Klantenservice</h4>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Verzending &amp; retour</a>
+        <a href="contact.html">Maattabel</a>
+        <a href="contact.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Over ons</h4>
+        <a href="contact.html">Over Anma</a>
+        <a href="contact.html">Duurzaamheid</a>
+        <a href="contact.html">Algemene voorwaarden</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Anma Medicals · Privacy · Cookies</div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script>
+    function renderCart() {
+      const cart = getCart();
+      const el = document.getElementById('cart-content');
+      if (!cart.length) {
+        el.innerHTML = `<div class="cart-empty"><p style="font-size:18px;margin-bottom:8px">Je winkelmand is leeg</p><p style="margin-bottom:20px">Ontdek onze stretchtunieken en vul je mand.</p><a href="dames-tunieken.html" class="btn btn-primary">Naar de shop</a></div>`;
+        return;
+      }
+      let rows = '';
+      let subtotal = 0;
+      cart.forEach((item, i) => {
+        const line = item.price * item.qty;
+        subtotal += line;
+        rows += `<tr>
+          <td><div class="cart-item-name">${item.name}</div><div class="cart-item-meta">${item.color} · Maat ${item.size}</div></td>
+          <td>€${item.price.toFixed(2).replace('.', ',')}</td>
+          <td><div class="qty" style="display:inline-flex"><button onclick="changeQty(${i}, ${item.qty - 1})">−</button><span>${item.qty}</span><button onclick="changeQty(${i}, ${item.qty + 1})">+</button></div></td>
+          <td>€${line.toFixed(2).replace('.', ',')}</td>
+          <td><button onclick="removeItem(${i})" style="background:none;border:0;color:var(--mut);cursor:pointer;font-size:18px" title="Verwijderen">×</button></td>
+        </tr>`;
+      });
+      const shipping = subtotal >= 60 ? 0 : 4.95;
+      const total = subtotal + shipping;
+      el.innerHTML = `
+        <div style="overflow-x:auto"><table class="cart-table">
+          <thead><tr><th>Product</th><th>Prijs</th><th>Aantal</th><th>Subtotaal</th><th></th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table></div>
+        <div class="cart-summary">
+          <div class="row-sum"><span>Subtotaal</span><span>€${subtotal.toFixed(2).replace('.', ',')}</span></div>
+          <div class="row-sum"><span>Verzending</span><span>${shipping === 0 ? 'Gratis' : '€' + shipping.toFixed(2).replace('.', ',')}</span></div>
+          ${subtotal < 60 ? '<p style="font-size:13px;color:var(--mut);margin:8px 0 0">Nog €' + (60 - subtotal).toFixed(2).replace('.', ',') + ' tot gratis verzending</p>' : ''}
+          <div class="row-sum total"><span>Totaal</span><span>€${total.toFixed(2).replace('.', ',')}</span></div>
+          <button class="btn btn-primary" style="width:100%;margin-top:16px" onclick="alert('Checkout demo – koppel hier je betaalprovider')">Afrekenen</button>
+          <a href="dames-tunieken.html" class="btn btn-outline" style="width:100%;margin-top:10px">Verder winkelen</a>
+        </div>`;
+    }
+    function changeQty(i, qty) { setQty(i, qty); renderCart(); }
+    function removeItem(i) { removeFromCart(i); renderCart(); }
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+</body>
+</html>
