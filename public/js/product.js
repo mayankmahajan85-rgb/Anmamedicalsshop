@@ -8,7 +8,7 @@
 
   function group(label, labelId) {
     const l = document.createElement('div'); l.className = 'lbl';
-    l.innerHTML = label + ': <span id="' + labelId + '">kies</span>';
+    l.innerHTML = label + ': <span id="' + labelId + '">choose</span>';
     wrap.appendChild(l);
     const box = document.createElement('div'); wrap.appendChild(box); return box;
   }
@@ -18,20 +18,20 @@
   }
 
   if (P.colors) {
-    const box = group('Kleur', 'cn'); box.className = 'sw';
+    const box = group('Colour', 'cn'); box.className = 'sw';
     P.colors.forEach((c, i) => {
       const b = document.createElement('button'); b.type = 'button';
       b.style.background = c[1]; b.title = c[0]; b.setAttribute('aria-label', c[0]);
       if (c[1].toLowerCase() === '#ffffff') b.style.borderColor = '#ccc';
-      b.onclick = () => pick('Kleur', c[0], 'cn', b, box);
+      b.onclick = () => pick('Colour', c[0], 'cn', b, box);
       box.appendChild(b); if (i === 0) b.click();
     });
   }
   if (P.sizes) {
-    const box = group('Maat', 'sn'); box.className = 'sz';
+    const box = group('Size', 'sn'); box.className = 'sz';
     P.sizes.forEach(s => {
       const b = document.createElement('button'); b.type = 'button'; b.textContent = s;
-      b.onclick = () => pick('Maat', s, 'sn', b, box); box.appendChild(b);
+      b.onclick = () => pick('Size', s, 'sn', b, box); box.appendChild(b);
     });
   }
   (P.options || []).forEach((o, k) => {
@@ -49,13 +49,20 @@
 
   $('add').onclick = () => {
     const labels = [];
-    if (P.colors) labels.push('Kleur');
-    if (P.sizes) labels.push('Maat');
+    if (P.colors) labels.push('Colour');
+    if (P.sizes) labels.push('Size');
     (P.options || []).forEach(o => labels.push(o.label));
     const missing = labels.filter(l => !chosen[l]);
     const msg = $('msg'); msg.className = '';
-    if (missing.length) { msg.textContent = 'Kies eerst: ' + missing.join(', ').toLowerCase() + '.'; msg.className = 'err'; return; }
+    if (missing.length) { msg.textContent = 'Please choose: ' + missing.join(', ').toLowerCase() + '.'; msg.className = 'err'; return; }
     addToCart({ id: P.id, name: P.name, options: labels.map(l => ({ label: l, value: chosen[l] })), qty });
-    msg.textContent = qty + '× ' + P.name + ' toegevoegd aan uw winkelmand.';
+    msg.textContent = qty + '× ' + P.name + ' added to your basket.';
   };
 })();
+
+/* gallery thumbnails */
+document.querySelectorAll('#thumbs button').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('#thumbs button').forEach(x => x.classList.remove('on'));
+  t.classList.add('on');
+  const m = document.getElementById('mainImg'); if (m) m.src = t.dataset.src;
+}));

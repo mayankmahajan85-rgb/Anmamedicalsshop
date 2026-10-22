@@ -29,20 +29,20 @@ export default {
       <td style="padding:8px;border:1px solid #ddd">${i.options.map(o => esc(o.label) + ': ' + esc(o.value)).join('<br>')}</td>
       <td style="padding:8px;border:1px solid #ddd;text-align:center">${i.qty}</td></tr>`).join('');
     const htmlBody = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#14232b">
-      <h2>Nieuwe offerteaanvraag ${esc(ref)}</h2>
-      <p><strong>Naam:</strong> ${esc(c.name)}<br><strong>Organisatie:</strong> ${esc(c.company) || '-'}<br>
-      <strong>E-mail:</strong> ${esc(c.email)}<br><strong>Telefoon:</strong> ${esc(c.phone)}<br>
-      <strong>Afleveradres:</strong> ${esc(c.address).replace(/\n/g, '<br>') || '-'}</p>
-      <table style="border-collapse:collapse"><thead><tr><th style="padding:8px;border:1px solid #ddd;text-align:left">Product</th><th style="padding:8px;border:1px solid #ddd;text-align:left">Specificatie</th><th style="padding:8px;border:1px solid #ddd">Aantal</th></tr></thead><tbody>${rows}</tbody></table>
-      <p><strong>Opmerkingen:</strong><br>${esc(c.notes).replace(/\n/g, '<br>') || '-'}</p></div>`;
-    const text = `Nieuwe offerteaanvraag ${ref}\n\nNaam: ${c.name}\nOrganisatie: ${c.company}\nE-mail: ${c.email}\nTelefoon: ${c.phone}\nAdres: ${c.address}\n\n` +
-      items.map(i => `- ${i.qty}x ${i.name} (${i.id}) ${i.options.map(o => o.label + ': ' + o.value).join(', ')}`).join('\n') + `\n\nOpmerkingen: ${c.notes}`;
+      <h2>New quotation request ${esc(ref)}</h2>
+      <p><strong>Name:</strong> ${esc(c.name)}<br><strong>Organisation:</strong> ${esc(c.company) || '-'}<br>
+      <strong>Email:</strong> ${esc(c.email)}<br><strong>Phone:</strong> ${esc(c.phone)}<br>
+      <strong>Delivery address:</strong> ${esc(c.address).replace(/\n/g, '<br>') || '-'}</p>
+      <table style="border-collapse:collapse"><thead><tr><th style="padding:8px;border:1px solid #ddd;text-align:left">Product</th><th style="padding:8px;border:1px solid #ddd;text-align:left">Specification</th><th style="padding:8px;border:1px solid #ddd">Quantity</th></tr></thead><tbody>${rows}</tbody></table>
+      <p><strong>Remarks:</strong><br>${esc(c.notes).replace(/\n/g, '<br>') || '-'}</p></div>`;
+    const text = `New quotation request ${ref}\n\nName: ${c.name}\nOrganisation: ${c.company}\nEmail: ${c.email}\nPhone: ${c.phone}\nAddress: ${c.address}\n\n` +
+      items.map(i => `- ${i.qty}x ${i.name} (${i.id}) ${i.options.map(o => o.label + ': ' + o.value).join(', ')}`).join('\n') + `\n\nRemarks: ${c.notes}`;
 
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ from: env.FROM_EMAIL, to: [env.TO_EMAIL], reply_to: c.email,
-        subject: `Offerteaanvraag ${ref} – ${c.name}${c.company ? ' (' + c.company + ')' : ''}`, html: htmlBody, text })
+        subject: `Quotation request ${ref} – ${c.name}${c.company ? ' (' + c.company + ')' : ''}`, html: htmlBody, text })
     });
     if (!res.ok) { console.error('Resend error', res.status, await res.text()); return json({ ok: false, error: 'send' }, 502); }
     return json({ ok: true, ref });

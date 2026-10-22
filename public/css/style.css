@@ -774,3 +774,16 @@ footer {
 @media (max-width: 700px) {
   .cat-grid-3, .contact-grid, .quote-form .f2 { grid-template-columns: 1fr; }
 }
+
+/* ---- v3: dropdown nav, product photos ---- */
+.nav-dd { position: relative; }
+.nav-dd .dd { display: none; position: absolute; top: 100%; left: -12px; min-width: 190px; padding: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); z-index: 150; }
+.nav-dd:hover .dd, .nav-dd:focus-within .dd { display: block; }
+.nav-dd .dd a { display: block; padding: 8px 10px; border: 0; border-radius: 6px; }
+.nav-dd .dd a:hover { background: var(--soft); color: var(--acc); }
+.mobile-nav a.sub { font-size: 15px; font-weight: 500; padding: 10px 0 10px 18px; color: var(--mut); }
+.prod-card .img.contain, .pdp-img.contain { background: #fff; }
+.prod-card .img.contain img, .pdp-img.contain img { object-fit: contain; }
+.thumbs { flex-wrap: wrap; }
+.thumbs button { background: #fff; }
+.thumbs button img { object-fit: contain; }
