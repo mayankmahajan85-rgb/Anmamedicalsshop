@@ -1,9 +1,16 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "anmamedicalsshop",
+  "main": "src/worker.js",
   "compatibility_date": "2025-09-02",
   "assets": {
     "directory": "./public",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "TO_EMAIL": "info@anmamedicals.com",
+    "FROM_EMAIL": "Anma Medicals Shop <shop@anmamedicals.com>"
   }
 }
