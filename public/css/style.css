@@ -787,3 +787,5 @@ footer {
 .thumbs { flex-wrap: wrap; }
 .thumbs button { background: #fff; }
 .thumbs button img { object-fit: contain; }
+.link-btn { background: none; border: 0; color: var(--acc); cursor: pointer; font-size: 13px; padding: 8px 0; text-decoration: underline; }
+.mail-fallback { display: inline-block; margin-top: 8px; font-weight: 600; color: var(--acc); }

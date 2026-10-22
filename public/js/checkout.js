@@ -41,11 +41,20 @@ function renderCart() {
   document.getElementById('quoteForm').addEventListener('submit', submitQuote);
 }
 
+function fetchT(url, opts, ms) {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms || 12000);
+  return fetch(url, Object.assign({}, opts, { signal: ctl.signal })).finally(() => clearTimeout(t));
+}
+function mailtoLink(p) {
+  const body = 'Name: ' + p.name + '\nOrganisation: ' + p.company + '\nEmail: ' + p.email + '\nPhone: ' + p.phone +
+    '\nDelivery address: ' + p.address + '\n\nOrder:\n' + p.items.map(itemLine).join('\n') + '\n\nRemarks: ' + p.notes;
+  return 'mailto:' + QUOTE_TO + '?subject=' + encodeURIComponent('Quotation request – ' + p.name) + '&body=' + encodeURIComponent(body);
+}
 const itemLine = i => `${i.qty}x ${i.name} (${i.id})` + ((i.options || []).length ? ' – ' + i.options.map(o => o.label + ': ' + o.value).join(', ') : '');
 
 /* Route 1: our own endpoint (Cloudflare Worker -> Resend) */
 async function sendViaWorker(payload) {
-  const r = await fetch('/api/quote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  const r = await fetchT('/api/quote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
   const data = await r.json().catch(() => ({}));
   if (!r.ok || !data.ok) throw new Error('worker:' + (data.error || r.status));
   return data.ref;
@@ -53,7 +62,7 @@ async function sendViaWorker(payload) {
 /* Route 2: FormSubmit.co – works from any static host; needs a one-time email activation (see README) */
 async function sendViaFormSubmit(payload) {
   const ref = 'AM-' + Date.now().toString(36).toUpperCase();
-  const r = await fetch('https://formsubmit.co/ajax/' + QUOTE_TO, {
+  const r = await fetchT('https://formsubmit.co/ajax/' + QUOTE_TO, {
     method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
       _subject: `Quotation request ${ref} – ${payload.name}${payload.company ? ' (' + payload.company + ')' : ''}`,
@@ -89,7 +98,8 @@ async function submitQuote(e) {
     console.error('Quote send failed:', errs);
     btn.disabled = false; btn.textContent = 'Request quotation';
     msg.className = 'err';
-    msg.innerHTML = 'Sorry, we could not send your request (' + esc(errs.join(' | ')) + '). Please try again or email us at <a href="mailto:' + QUOTE_TO + '">' + QUOTE_TO + '</a>.';
+    msg.innerHTML = 'Sorry, we could not send your request automatically (' + esc(errs.join(' | ')) + '). ' +
+      '<a class="mail-fallback" href="' + mailtoLink(payload) + '">Send it by email instead (your order details are filled in)</a>';
     return;
   }
   clearCart();
