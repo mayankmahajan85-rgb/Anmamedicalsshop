@@ -71,6 +71,7 @@ document.querySelectorAll('#thumbs button').forEach(t => t.addEventListener('cli
    1) uses img/<slug>-<colour>.jpg if you add such a photo (e.g. img/meliana-navy.jpg)
    2) otherwise draws the tunic in the chosen colour so the change is always visible.
    "Show original photo" returns to the source photo. */
+var P = window.PRODUCT;
 var origSrc = null;
 function colourSlug(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
 function tunicCard(name, hex) {
