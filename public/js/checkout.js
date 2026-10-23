@@ -108,7 +108,7 @@ async function submitQuote(e) {
     <div class="thanks">
       <div class="tick">✓</div>
       <h2>${L.thanksT}</h2>
-      <p>${L.thanks1}${ref !== 'OK' ? ' (${L.ref} <strong>' + esc(ref) + '</strong>)' : ''}.</p>
+      <p>${L.thanks1}${ref !== 'OK' ? ' (' + L.ref + ' <strong>' + esc(ref) + '</strong>)' : ''}.</p>
       <p>${L.thanks2}</p>
       <a href="index.html" class="btn btn-primary" style="margin-top:16px">${L.backHome}</a>
     </div>`;

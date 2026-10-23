@@ -6,6 +6,15 @@ const json = (obj, status = 200) => new Response(JSON.stringify(obj), { status, 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/img') {            // same-origin image proxy (needed to recolour product photos in the browser)
+      try {
+        const u = new URL(url.searchParams.get('u') || '');
+        if (u.protocol !== 'https:' || u.hostname !== 'www.7daysshop.nl' || !u.pathname.startsWith('/media/catalog/product/')) return new Response('forbidden', { status: 403 });
+        const r = await fetch(u.toString(), { cf: { cacheTtl: 604800, cacheEverything: true } });
+        if (!r.ok) return new Response('not found', { status: 404 });
+        return new Response(r.body, { headers: { 'Content-Type': r.headers.get('content-type') || 'image/jpeg', 'Cache-Control': 'public, max-age=604800' } });
+      } catch { return new Response('bad request', { status: 400 }); }
+    }
     if (url.pathname !== '/api/quote') return env.ASSETS.fetch(request);
     if (request.method !== 'POST') return json({ ok: false, error: 'method' }, 405);
 

@@ -1,20 +1,28 @@
 # ANMA Medicals shop (quotation shop)
 
-Static site in `public/` (one folder per language: en, nl, de, fr; `public/index.html` picks the visitor language) + a Cloudflare Worker (`src/worker.js`) handling `POST /api/quote`.
-No prices are shown; customers add items to the basket and submit a quotation request,
-which is emailed to info@anmamedicals.com.
+Multilingual (EN / NL / DE / FR-BE) static site in `public/` plus a Cloudflare Worker (`src/worker.js`).
+No prices are shown: visitors add items to the basket and submit a quotation request, which is emailed
+to info@anmamedicals.com. `public/index.html` sends visitors to their language (`public/en|nl|de|fr/`).
 
-## How the quote email is sent (two routes, tried in this order)
-1. **Worker + Resend** (recommended, fully under your control)
-   - Create an account at https://resend.com and verify the domain `anmamedicals.com`.
-   - Set `FROM_EMAIL` in `wrangler.jsonc` to an address on that domain.
-   - `npx wrangler secret put RESEND_API_KEY` (paste your key), then `npx wrangler deploy`.
-2. **FormSubmit fallback** (no account needed, works even on plain static hosting)
-   - The very first request sends an *activation email* to info@anmamedicals.com.
-     Open it and click the confirm link once. After that every request arrives by email.
+## Deploy (Cloudflare Workers)
+1. `npm install`
+2. `npx wrangler login`
+3. Email (choose one – both can be used, the first that works wins):
+   - **Resend (recommended):** verify `anmamedicals.com` at https://resend.com, set `FROM_EMAIL` in `wrangler.jsonc`
+     to an address on that domain, then `npx wrangler secret put RESEND_API_KEY`.
+   - **FormSubmit fallback (no account):** after deploying, submit one test request; an activation email arrives at
+     info@anmamedicals.com – click the link once.
+4. `npx wrangler deploy`
+5. Add your domain under Workers → your worker → Settings → Domains & Routes.
 
-If both fail, the page shows the technical reason so it can be fixed.
+If both email routes fail, the form shows the reason and a "send by email instead" link.
 
-## Product photos
-Photos load from the manufacturers' sites (hot-linked). For reliability, download them and put them in
-`public/img/` — local placeholders with the same names (e.g. `fusion-bond-7.jpg`) are used automatically if a remote photo is unavailable.
+Before going live: remove the `X-Robots-Tag: noindex` line in `public/_headers` and the
+`<meta name="robots" content="noindex">` tags if you want the site to appear in search engines.
+
+## Photos
+- Product photos load from prevestdirect.com / 7daysshop.nl. For reliability download them into `public/img/`
+  (same file names as the placeholders, e.g. `fusion-bond-7.jpg`); the placeholder is used if a remote photo fails.
+- Tunic colours: put real per-colour photos in `public/img/` named `<product>-<colour>.jpg`
+  (e.g. `meliana-navy.jpg`, `lens-black.jpg`). Without them, the model photo is recoloured in the browser
+  (needs the Worker for `/api/img`); if that fails the original photo stays.

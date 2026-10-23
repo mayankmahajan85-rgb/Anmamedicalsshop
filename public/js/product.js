@@ -69,31 +69,43 @@ var P = window.PRODUCT, L = window.I18N || {};
 })();
 
 /* ---- colour -> picture ----
-   1) uses ../img/<slug>-<colour>.jpg if you add such a photo (e.g. img/meliana-navy.jpg)
-   2) otherwise draws the tunic in the chosen colour so the change is always visible.
-   "Show original photo" returns to the source photo. */
-var origSrc = null;
-function tunicCard(name, hex) {
-  var light = /^#(fff|ffffff|c9ced2)$/i.test(hex);
-  var esc = function (t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
-  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 480 600">' +
-    '<rect width="480" height="600" fill="#0f6b73"/><rect x="40" y="40" width="400" height="440" rx="24" fill="#e8f4f3"/>' +
-    '<polygon points="130,170 180,120 240,150 300,120 350,170 320,195 318,380 162,380 160,195" fill="' + hex + '" stroke="' + (light ? '#9aa7ac' : 'none') + '" stroke-width="3"/>' +
-    '<text x="240" y="525" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="30" fill="#0e171b">' + esc(name) + '</text>' +
-    '<text x="240" y="558" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#5d6d75">' + esc(P.name) + '</text></svg>';
-  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-}
+   1) uses ../img/<slug>-<colour>.jpg if that photo exists (e.g. img/meliana-navy.jpg)
+   2) otherwise recolours the model's tunic in the browser (photo is read through /api/img on your own site)
+   3) if that is not possible the original photo stays. */
+var origSrc = null, token = 0, recoloured = {};
 function showColour(c) {
   var m = document.getElementById('mainImg'); if (!m || !P.colors) return;
   if (origSrc === null) { origSrc = m.getAttribute('src'); addOrigButton(m); }
-  m.onerror = function () { m.onerror = null; m.src = tunicCard(c[0], c[1]); };
-  m.src = '../img/' + P.slug + '-' + c[2] + '.jpg';
-  var b = document.getElementById('origBtn'); if (b) b.style.display = '';
+  var my = ++token, key = c[2];
+  function set(src) { if (my !== token) return; m.onerror = null; m.src = src; m.style.opacity = ''; var b = document.getElementById('origBtn'); if (b) b.style.display = ''; }
+  function keep() { if (my !== token) return; m.style.opacity = ''; }
+  if (recoloured[key]) return set(recoloured[key]);
+  m.style.opacity = '.55';
+  var loc = new Image();
+  loc.onload = function () { recoloured[key] = loc.src; set(loc.src); };
+  loc.onerror = function () {
+    if (!P.photo || !window.recolorGarment || location.protocol.indexOf('http') !== 0) return keep();
+    var im = new Image(); im.crossOrigin = 'anonymous';
+    im.onload = function () {
+      try {
+        var sc = Math.min(1, 900 / im.naturalWidth), w = Math.round(im.naturalWidth * sc), h = Math.round(im.naturalHeight * sc);
+        var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+        var cx = cv.getContext('2d'); cx.drawImage(im, 0, 0, w, h);
+        var id = cx.getImageData(0, 0, w, h);
+        if (!window.recolorGarment(id.data, w, h, c[1])) return keep();
+        cx.putImageData(id, 0, 0);
+        recoloured[key] = cv.toDataURL('image/jpeg', 0.92); set(recoloured[key]);
+      } catch (e) { keep(); }
+    };
+    im.onerror = keep;
+    im.src = '/api/img?u=' + encodeURIComponent(P.photo);
+  };
+  loc.src = '../img/' + P.slug + '-' + key + '.jpg';
 }
 function addOrigButton(m) {
   var wrap = m.parentNode.parentNode;
   var b = document.createElement('button');
   b.type = 'button'; b.id = 'origBtn'; b.className = 'link-btn'; b.textContent = L.orig; b.style.display = 'none';
-  b.onclick = function () { m.onerror = null; m.src = origSrc; b.style.display = 'none'; };
+  b.onclick = function () { token++; m.onerror = null; m.style.opacity = ''; m.src = origSrc; b.style.display = 'none'; };
   wrap.appendChild(b);
 }
