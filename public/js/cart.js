@@ -37,4 +37,16 @@ function initMobileMenu() {
   close?.addEventListener('click', () => nav.classList.remove('open'));
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 }
-document.addEventListener('DOMContentLoaded', () => { updateCartCount(); initMobileMenu(); });
+/* language switcher: remember the choice, open/close menu on tap */
+function initLang() {
+  const box = document.getElementById('langSwitch');
+  if (!box) return;
+  const btn = box.querySelector('.lang-btn');
+  btn.addEventListener('click', e => { e.stopPropagation(); box.classList.toggle('open'); });
+  document.addEventListener('click', () => box.classList.remove('open'));
+  box.querySelectorAll('a[data-lang]').forEach(a => a.addEventListener('click', () => {
+    try { localStorage.setItem('anma_lang', a.dataset.lang); } catch {}
+  }));
+  try { if (window.I18N) localStorage.setItem('anma_lang', window.I18N.lang); } catch {}
+}
+document.addEventListener('DOMContentLoaded', () => { updateCartCount(); initMobileMenu(); initLang(); });

@@ -1,6 +1,6 @@
 # ANMA Medicals shop (quotation shop)
 
-Static site in `public/` + a Cloudflare Worker (`src/worker.js`) handling `POST /api/quote`.
+Static site in `public/` (one folder per language: en, nl, de, fr; `public/index.html` picks the visitor language) + a Cloudflare Worker (`src/worker.js`) handling `POST /api/quote`.
 No prices are shown; customers add items to the basket and submit a quotation request,
 which is emailed to info@anmamedicals.com.
 

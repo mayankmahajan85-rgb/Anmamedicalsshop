@@ -14,6 +14,7 @@ export default {
     if (d.website) return json({ ok: true, ref: 'OK' });            // honeypot: pretend success to bots
 
     const clip = (s, n) => String(s ?? '').trim().slice(0, n);
+    const lang = clip(d.lang, 5);
     const c = { name: clip(d.name, 120), company: clip(d.company, 160), email: clip(d.email, 160),
                 phone: clip(d.phone, 40), address: clip(d.address, 400), notes: clip(d.notes, 2000) };
     const items = Array.isArray(d.items) ? d.items.slice(0, 100).map(i => ({
@@ -29,7 +30,7 @@ export default {
       <td style="padding:8px;border:1px solid #ddd">${i.options.map(o => esc(o.label) + ': ' + esc(o.value)).join('<br>')}</td>
       <td style="padding:8px;border:1px solid #ddd;text-align:center">${i.qty}</td></tr>`).join('');
     const htmlBody = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#14232b">
-      <h2>New quotation request ${esc(ref)}</h2>
+      <h2>New quotation request ${esc(ref)}</h2><p>Customer language: ${esc(lang) || '-'}</p>
       <p><strong>Name:</strong> ${esc(c.name)}<br><strong>Organisation:</strong> ${esc(c.company) || '-'}<br>
       <strong>Email:</strong> ${esc(c.email)}<br><strong>Phone:</strong> ${esc(c.phone)}<br>
       <strong>Delivery address:</strong> ${esc(c.address).replace(/\n/g, '<br>') || '-'}</p>
