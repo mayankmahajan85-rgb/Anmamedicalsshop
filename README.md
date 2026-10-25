@@ -20,9 +20,19 @@ If both email routes fail, the form shows the reason and a "send by email instea
 Before going live: remove the `X-Robots-Tag: noindex` line in `public/_headers` and the
 `<meta name="robots" content="noindex">` tags if you want the site to appear in search engines.
 
-## Photos
-- Product photos load from prevestdirect.com / 7daysshop.nl. For reliability download them into `public/img/`
-  (same file names as the placeholders, e.g. `fusion-bond-7.jpg`); the placeholder is used if a remote photo fails.
-- Tunic colours: put real per-colour photos in `public/img/` named `<product>-<colour>.jpg`
-  (e.g. `meliana-navy.jpg`, `lens-black.jpg`). Without them, the model photo is recoloured in the browser
-  (needs the Worker for `/api/img`); if that fails the original photo stays.
+## Images
+- **Tunics (Ladies / Gents):** original illustrations drawn for this shop (no third-party photos). One image per colour
+  (`public/img/meliana-<colour>.jpg`, `lens-<colour>.jpg`); choosing a colour switches the picture. Replace them with your own
+  photos using the same file names whenever you like.
+- **Dental products:** product photos come from the manufacturer's catalogue (`public/img/<product>.jpg`). Please make sure you
+  are allowed to use them on your own site (ask Prevest DenPro for written permission / their press-kit images).
+
+## Search
+Client-side product search (header box with suggestions + `search.html`). The index files `public/js/search-<lang>.js`
+contain every product; it searches names, descriptions, article numbers and supplier REF numbers.
+
+## CE-marked products – selection rule
+Products were added from the supplier's Declarations of Conformity (DOC_Final 21-05-2026 and DOC_CLASS_I) **only if** the
+supplier's January-2025 price list does not mark them "Non CE Product". Items where the two documents disagree
+(e.g. Calplus, Endoseal, Zical, Fluorotop, Alvocure, Hemostal liquid) were left out. **Hemostal Gel** is in the shop but
+is marked "Non CE Product" in the price list – please confirm its CE status with the supplier before selling in the EU.

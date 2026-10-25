@@ -6,10 +6,10 @@ var P = window.PRODUCT, L = window.I18N || {};
   let qty = 1;
   const wrap = $('opts');
 
-  function group(label, labelId) {
+  function group(label, labelId, optional) {
     const l = document.createElement('div'); l.className = 'lbl';
-    l.appendChild(document.createTextNode(label + ': '));
-    const sp = document.createElement('span'); sp.id = labelId; sp.textContent = L.choose; l.appendChild(sp);
+    l.appendChild(document.createTextNode(label + (optional ? ' (' + (L.optional || 'optional') + ')' : '') + ': '));
+    const sp = document.createElement('span'); sp.id = labelId; sp.textContent = optional ? '–' : L.choose; l.appendChild(sp);
     wrap.appendChild(l);
     const box = document.createElement('div'); wrap.appendChild(box); return box;
   }
@@ -37,7 +37,7 @@ var P = window.PRODUCT, L = window.I18N || {};
   }
   (P.options || []).forEach((o, k) => {
     const id = 'o' + k;
-    const box = group(o.label, id); box.className = 'sz opt-list';
+    const box = group(o.label, id, o.optional); box.className = 'sz opt-list';
     o.values.forEach(v => {
       const b = document.createElement('button'); b.type = 'button'; b.textContent = v;
       b.onclick = () => pick(o.label, v, id, b, box); box.appendChild(b);
@@ -52,7 +52,7 @@ var P = window.PRODUCT, L = window.I18N || {};
     const labels = [];
     if (P.colors) labels.push(L.colour);
     if (P.sizes) labels.push(L.size);
-    (P.options || []).forEach(o => labels.push(o.label));
+    (P.options || []).forEach(o => { if (!o.optional || chosen[o.label]) labels.push(o.label); });
     const missing = labels.filter(l => !chosen[l]);
     const msg = $('msg'); msg.className = '';
     if (missing.length) { msg.textContent = L.pleaseChoose + missing.join(', ').toLowerCase() + '.'; msg.className = 'err'; return; }
@@ -68,44 +68,11 @@ var P = window.PRODUCT, L = window.I18N || {};
   }));
 })();
 
-/* ---- colour -> picture ----
-   1) uses ../img/<slug>-<colour>.jpg if that photo exists (e.g. img/meliana-navy.jpg)
-   2) otherwise recolours the model's tunic in the browser (photo is read through /api/img on your own site)
-   3) if that is not possible the original photo stays. */
-var origSrc = null, token = 0, recoloured = {};
+/* ---- colour -> picture: shows img/<slug>-<colour>.jpg (original illustrations, one per colour) ---- */
+var origSrc = null;
 function showColour(c) {
   var m = document.getElementById('mainImg'); if (!m || !P.colors) return;
-  if (origSrc === null) { origSrc = m.getAttribute('src'); addOrigButton(m); }
-  var my = ++token, key = c[2];
-  function set(src) { if (my !== token) return; m.onerror = null; m.src = src; m.style.opacity = ''; var b = document.getElementById('origBtn'); if (b) b.style.display = ''; }
-  function keep() { if (my !== token) return; m.style.opacity = ''; }
-  if (recoloured[key]) return set(recoloured[key]);
-  m.style.opacity = '.55';
-  var loc = new Image();
-  loc.onload = function () { recoloured[key] = loc.src; set(loc.src); };
-  loc.onerror = function () {
-    if (!P.photo || !window.recolorGarment || location.protocol.indexOf('http') !== 0) return keep();
-    var im = new Image(); im.crossOrigin = 'anonymous';
-    im.onload = function () {
-      try {
-        var sc = Math.min(1, 900 / im.naturalWidth), w = Math.round(im.naturalWidth * sc), h = Math.round(im.naturalHeight * sc);
-        var cv = document.createElement('canvas'); cv.width = w; cv.height = h;
-        var cx = cv.getContext('2d'); cx.drawImage(im, 0, 0, w, h);
-        var id = cx.getImageData(0, 0, w, h);
-        if (!window.recolorGarment(id.data, w, h, c[1])) return keep();
-        cx.putImageData(id, 0, 0);
-        recoloured[key] = cv.toDataURL('image/jpeg', 0.92); set(recoloured[key]);
-      } catch (e) { keep(); }
-    };
-    im.onerror = keep;
-    im.src = '/api/img?u=' + encodeURIComponent(P.photo);
-  };
-  loc.src = '../img/' + P.slug + '-' + key + '.jpg';
-}
-function addOrigButton(m) {
-  var wrap = m.parentNode.parentNode;
-  var b = document.createElement('button');
-  b.type = 'button'; b.id = 'origBtn'; b.className = 'link-btn'; b.textContent = L.orig; b.style.display = 'none';
-  b.onclick = function () { token++; m.onerror = null; m.style.opacity = ''; m.src = origSrc; b.style.display = 'none'; };
-  wrap.appendChild(b);
+  if (origSrc === null) { origSrc = m.getAttribute('src'); }
+  m.onerror = function () { m.onerror = null; m.src = origSrc; };
+  m.src = '../img/' + P.slug + '-' + c[2] + '.jpg';
 }

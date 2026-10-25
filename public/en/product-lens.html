@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html">Medical Products ▾</a><div class="dd"><a href="dental-products.html">Dental Products</a><a href="general-products.html">General Products</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Search products" placeholder="Search products">
+      <button type="submit" aria-label="Search">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Language" aria-haspopup="true">🌐 EN ▾</button>
@@ -45,7 +50,7 @@
     <div class="crumb"><a href="index.html">Home</a> › Medical Garments › <a href="gents.html">Gents</a> › Gents tunic LENS</div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-img"><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206457_internet_6.jpg" alt="Gents tunic LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" id="mainImg" width="600" height="750"></div>
+        <div class="pdp-img"><img src="../img/lens.jpg" alt="Gents tunic LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" id="mainImg" width="600" height="750"></div>
         
       </div>
       <div class="pdp">
@@ -73,15 +78,15 @@
       <div class="section-header"><h2>You may also be interested in</h2><a href="gents.html">View all →</a></div>
       <div class="prod-grid">
       <a href="product-meliana.html" class="prod-card">
-        <div class="img"><span class="badge">New</span><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206439_internet_8.jpg" alt="Ladies tunic MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" loading="lazy"></div>
+        <div class="img"><span class="badge">New</span><img src="../img/meliana.jpg" alt="Ladies tunic MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" loading="lazy"></div>
         <div class="body"><h3>Ladies tunic MELIANA</h3><div class="meta">DualSoft · Ladies</div><div class="price-req">Price on request</div></div>
       </a>
       <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-universal-composite-kit.jpg" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Nano-hybrid composite · Prevest DenPro</div><div class="price-req">Price on request</div></div>
       </a>
       <a href="product-fusion-flo-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion_Flo_Kit-2.webp?v=1780481613&width=800" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-flo-kit.jpg" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Flo Kit</h3><div class="meta">Flowable composite · Prevest DenPro</div><div class="price-req">Price on request</div></div>
       </a>
       </div>
@@ -114,9 +119,10 @@
   </footer>
 
   <script src="../js/i18n-en.js"></script>
+  <script src="../js/search-en.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
-  <script>window.PRODUCT = {"id": "AM-G-001", "slug": "lens", "name": "Gents tunic LENS – DualSoft", "photo": "https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206457_internet_6.jpg", "colors": [["Navy", "#1b2f5b", "navy"], ["Petrol", "#0f6b73", "petrol"], ["Anthracite", "#3b4248", "anthracite"], ["Black", "#161616", "black"], ["White", "#ffffff", "white"]], "sizes": ["XS", "S", "M", "L", "XL", "XXL", "3XL"], "options": []};</script>
-  <script src="../js/recolor.js"></script>
+  <script>window.PRODUCT = {"id": "AM-G-001", "slug": "lens", "name": "Gents tunic LENS – DualSoft", "photo": null, "colors": [["Navy", "#1b2f5b", "navy"], ["Petrol", "#0f6b73", "petrol"], ["Anthracite", "#3b4248", "anthracite"], ["Black", "#161616", "black"], ["White", "#ffffff", "white"]], "sizes": ["XS", "S", "M", "L", "XL", "XXL", "3XL"], "options": []};</script>
   <script src="../js/product.js"></script>
 </body>
 </html>

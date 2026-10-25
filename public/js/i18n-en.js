@@ -32,5 +32,15 @@ window.I18N = {
  "ref": "reference",
  "thanks2": "The ANMA Medicals Team will contact you shortly for more details to process your order.",
  "backHome": "Back to home",
+ "optional": "optional",
+ "searchPh": "Search products",
+ "searchNone": "No products found for",
+ "searchFor": "for",
+ "searchProducts": "products",
+ "searchProduct": "product",
+ "searchTry": "Try a different term (name, article number or REF) or contact us: we can supply more products on request.",
+ "searchAll": "All results",
+ "priceReq": "Price on request",
+ "searchEmpty": "Type a product name, article number or REF.",
  "lang": "en"
 };

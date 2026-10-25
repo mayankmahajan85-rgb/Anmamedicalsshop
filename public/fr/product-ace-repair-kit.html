@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html" class="active">Produits médicaux ▾</a><div class="dd"><a href="dental-products.html">Produits dentaires</a><a href="general-products.html">Produits généraux</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Rechercher des produits" placeholder="Search products">
+      <button type="submit" aria-label="Rechercher">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Langue" aria-haspopup="true">🌐 FR ▾</button>
@@ -45,8 +50,8 @@
     <div class="crumb"><a href="index.html">Accueil</a> › Produits médicaux › <a href="dental-products.html">Produits dentaires</a> › ACE Repair Kit</div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/ACE-Repair-Kit.webp?v=1778842123&width=800" alt="ACE Repair Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/ace-repair-kit.jpg'" id="mainImg" width="600" height="750"></div>
-        <div class="thumbs" id="thumbs"><button type="button" class="on" data-src="https://www.prevestdirect.com/cdn/shop/files/ACE-Repair-Kit.webp?v=1778842123&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/ACE-Repair-Kit.webp?v=1778842123&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/1-1-2.webp?v=1758021423&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/1-1-2.webp?v=1758021423&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/1-2-porcelain-etch-hydrofluoric-acid.webp?v=1763548293&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/1-2-porcelain-etch-hydrofluoric-acid.webp?v=1763548293&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/183-removebg-preview-porcelain-etch-hydrofluoric-acid.webp?v=1763548293&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/183-removebg-preview-porcelain-etch-hydrofluoric-acid.webp?v=1763548293&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button></div>
+        <div class="pdp-img contain"><img src="../img/ace-repair-kit.jpg" alt="ACE Repair Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/ace-repair-kit.jpg'" id="mainImg" width="600" height="750"></div>
+        
       </div>
       <div class="pdp">
         <h1>ACE Repair Kit</h1>
@@ -63,6 +68,7 @@
           <li>Le prix et le délai de livraison figurent dans votre offre personnalisée</li>
           <li>L’équipe ANMA Medicals vous contactera</li>
           <li>Réservé à un usage professionnel par les dentistes et professionnels de santé</li>
+          <li>Dispositif médical marqué CE · fabricant : Prevest DenPro Limited</li>
         </ul>
         <details open><summary>Description</summary><p>Ensemble complet pour les réparations intra-orales de restaurations en céramique et en composite. Le kit comprend les matériaux de collage et de stratification nécessaires : Silane-X (agent de silanisation), CeraEtch (acide fluorhydrique à 5 %), Renew Universal (adhésif 10-MDP + 4-META) et Fusion Flo (composite fluide).</p></details>
         <details><summary>Indications</summary><p>Réparation de couronnes et bridges céramo-métalliques, d’inlays, d’onlays et de restaurations tout-céramique.</p></details>
@@ -73,21 +79,21 @@
     <section class="section" style="margin-top:56px">
       <div class="section-header"><h2>Cela pourrait aussi vous intéresser</h2><a href="dental-products.html">Tout voir →</a></div>
       <div class="prod-grid">
+      <a href="product-silane-x.html" class="prod-card" data-tags="ceramic">
+        <div class="img contain"><img src="../img/silane-x.jpg" alt="Silane-X" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/silane-x.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Silane-X</h3><div class="meta">Agent de couplage silane · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-cera-etch.html" class="prod-card" data-tags="ceramic">
+        <div class="img contain"><img src="../img/cera-etch.jpg" alt="Cera Etch" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cera-etch.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Cera Etch</h3><div class="meta">Gel de mordançage de la porcelaine · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
       <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-universal-composite-kit.jpg" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Composite nano-hybride · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-flo-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion_Flo_Kit-2.webp?v=1780481613&width=800" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-flo-kit.jpg" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Flo Kit</h3><div class="meta">Composite fluide · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
-      </a>
-      <a href="product-fusion-bond-7.html" class="prod-card" data-tags="adhesives">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Bond_7-1.webp?v=1779449405&width=800" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Bond 7</h3><div class="meta">Adhésif auto-mordançant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
-      </a>
-      <a href="product-micron-superior-capsule.html" class="prod-card" data-tags="cements">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-1.webp?v=1780480977&width=800" alt="Micron Superior Capsule" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior-capsule.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Micron Superior Capsule</h3><div class="meta">Ciment verre ionomère · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       </div>
     </section>
@@ -119,9 +125,10 @@
   </footer>
 
   <script src="../js/i18n-fr.js"></script>
+  <script src="../js/search-fr.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
-  <script>window.PRODUCT = {"id": "AM-D-106", "slug": "ace-repair-kit", "name": "ACE Repair Kit", "photo": null, "colors": null, "sizes": null, "options": [{"label": "Conditionnement", "values": ["Pack standard – 1 kit"]}]};</script>
-  <script src="../js/recolor.js"></script>
+  <script>window.PRODUCT = {"id": "AM-D-106", "slug": "ace-repair-kit", "name": "ACE Repair Kit", "photo": null, "colors": null, "sizes": null, "options": [{"label": "Conditionnement", "values": ["Pack standard – 1 kit"], "optional": false}]};</script>
   <script src="../js/product.js"></script>
 </body>
 </html>

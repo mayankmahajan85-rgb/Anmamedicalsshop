@@ -32,5 +32,15 @@ window.I18N = {
  "ref": "Referenz",
  "thanks2": "Das ANMA Medicals Team meldet sich in Kürze bei Ihnen, um weitere Details zur Bearbeitung Ihrer Bestellung zu klären.",
  "backHome": "Zurück zur Startseite",
+ "optional": "optional",
+ "searchPh": "Produkte suchen",
+ "searchNone": "Keine Produkte gefunden für",
+ "searchFor": "für",
+ "searchProducts": "Produkte",
+ "searchProduct": "Produkt",
+ "searchTry": "Versuchen Sie einen anderen Begriff (Name, Artikelnummer oder REF) oder kontaktieren Sie uns: Weitere Produkte liefern wir auf Anfrage.",
+ "searchAll": "Alle Ergebnisse",
+ "priceReq": "Preis auf Anfrage",
+ "searchEmpty": "Geben Sie einen Produktnamen, eine Artikelnummer oder REF ein.",
  "lang": "de"
 };

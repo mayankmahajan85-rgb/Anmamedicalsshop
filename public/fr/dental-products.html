@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html" class="active">Produits médicaux ▾</a><div class="dd"><a href="dental-products.html">Produits dentaires</a><a href="general-products.html">Produits généraux</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Rechercher des produits" placeholder="Search products">
+      <button type="submit" aria-label="Rechercher">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Langue" aria-haspopup="true">🌐 FR ▾</button>
@@ -45,48 +50,324 @@
     <div class="crumb"><a href="index.html">Accueil</a> › <a href="medical-products.html">Produits médicaux</a> › Produits dentaires</div>
     <h1 style="font-size:28px;margin:0 0 8px">Produits dentaires</h1>
     <p style="color:var(--mut);margin:0 0 24px;max-width:600px">Matériaux dentaires Prevest DenPro à usage professionnel. Prix sur demande : ajoutez des produits à votre panier et nous vous enverrons une offre.</p>
-    <div class="filters" id="filters"><button class="filter-chip on" data-filter="all">Tous</button><button class="filter-chip" data-filter="composites">Composites</button><button class="filter-chip" data-filter="adhesives">Adhésifs</button><button class="filter-chip" data-filter="cements">Ciments</button><button class="filter-chip" data-filter="hemostatics">Hémostatiques</button><button class="filter-chip" data-filter="ceramic">Réparation céramique</button><button class="filter-chip" data-filter="endo">Endodontie</button></div>
-    <div class="results-count"><span id="count">10</span> produits</div>
+    <div class="filters" id="filters"><button class="filter-chip on" data-filter="all">Tous</button><button class="filter-chip" data-filter="composites">Composites</button><button class="filter-chip" data-filter="adhesives">Adhésifs</button><button class="filter-chip" data-filter="cements">Ciments</button><button class="filter-chip" data-filter="endo">Endodontie</button><button class="filter-chip" data-filter="temporary">Matériaux provisoires</button><button class="filter-chip" data-filter="varnishes">Vernis &amp; désensibilisants</button><button class="filter-chip" data-filter="ceramic">Réparation céramique</button><button class="filter-chip" data-filter="finishing">Finition &amp; auxiliaires</button><button class="filter-chip" data-filter="impression">Matériaux d’empreinte</button><button class="filter-chip" data-filter="lab">Matériaux prothétiques</button><button class="filter-chip" data-filter="ortho">Orthodontie</button><button class="filter-chip" data-filter="hemostatics">Hémostatiques</button><button class="filter-chip" data-filter="3d">Résines 3D</button></div>
+    <div class="results-count"><span id="count">79</span> produits</div>
     <div class="prod-grid" id="grid">
       <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-universal-composite-kit.jpg" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Composite nano-hybride · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-flo-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion_Flo_Kit-2.webp?v=1780481613&width=800" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-flo-kit.jpg" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Flo Kit</h3><div class="meta">Composite fluide · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-bond-7.html" class="prod-card" data-tags="adhesives">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Bond_7-1.webp?v=1779449405&width=800" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-bond-7.jpg" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Bond 7</h3><div class="meta">Adhésif auto-mordançant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-micron-superior-capsule.html" class="prod-card" data-tags="cements">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-1.webp?v=1780480977&width=800" alt="Micron Superior Capsule" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior-capsule.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/micron-superior-capsule.jpg" alt="Micron Superior Capsule" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior-capsule.jpg'" loading="lazy"></div>
         <div class="body"><h3>Micron Superior Capsule</h3><div class="meta">Ciment verre ionomère · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-hemostal-gel.html" class="prod-card" data-tags="hemostatics">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Hemostal-Gel-1.webp?v=1780483540&width=800" alt="Hemostal Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/hemostal-gel.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/hemostal-gel.jpg" alt="Hemostal Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/hemostal-gel.jpg'" loading="lazy"></div>
         <div class="body"><h3>Hemostal Gel</h3><div class="meta">Gel de rétraction gingivale · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-ace-repair-kit.html" class="prod-card" data-tags="ceramic">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/ACE-Repair-Kit.webp?v=1778842123&width=800" alt="ACE Repair Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/ace-repair-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/ace-repair-kit.jpg" alt="ACE Repair Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/ace-repair-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>ACE Repair Kit</h3><div class="meta">Kit de réparation céramique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-core-dc-flo.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Core-DC-Flo.webp?v=1778842361&width=800" alt="Fusion Core DC Flo" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-core-dc-flo.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-core-dc-flo.jpg" alt="Fusion Core DC Flo" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-core-dc-flo.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Core DC Flo</h3><div class="meta">Composite de reconstitution à double polymérisation · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-flo.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Flo.webp?v=1778842321&width=800" alt="Fusion Flo" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-flo.jpg" alt="Fusion Flo" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Flo</h3><div class="meta">Composite fluide · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-mta-plus.html" class="prod-card" data-tags="endo">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-1.webp?v=1780555598&width=800" alt="MTA Plus" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/mta-plus.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/mta-plus.jpg" alt="MTA Plus" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/mta-plus.jpg'" loading="lazy"></div>
         <div class="body"><h3>MTA Plus</h3><div class="meta">Agrégat de trioxyde minéral · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-pf-seal.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/PF-Seal-1.webp?v=1780481613&width=800" alt="PF Seal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/pf-seal.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/pf-seal.jpg" alt="PF Seal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/pf-seal.jpg'" loading="lazy"></div>
         <div class="body"><h3>PF Seal</h3><div class="meta">Scellement de puits et sillons · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-bond-5.html" class="prod-card" data-tags="adhesives">
+        <div class="img contain"><img src="../img/fusion-bond-5.jpg" alt="Fusion Bond 5" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-5.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Bond 5</h3><div class="meta">Adhésif total-etch · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-bond-dc.html" class="prod-card" data-tags="adhesives">
+        <div class="img contain"><img src="../img/fusion-bond-dc.jpg" alt="Fusion Bond DC" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-dc.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Bond DC</h3><div class="meta">Adhésif à double polymérisation · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-renew-mdp.html" class="prod-card" data-tags="adhesives">
+        <div class="img contain"><img src="../img/renew-mdp.jpg" alt="Renew MDP" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/renew-mdp.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Renew MDP</h3><div class="meta">Adhésif auto-mordançant 10-MDP · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-renew-universal.html" class="prod-card" data-tags="adhesives">
+        <div class="img contain"><img src="../img/renew-universal.jpg" alt="Renew Universal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/renew-universal.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Renew Universal</h3><div class="meta">Adhésif universel · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-actino-gel-liquid.html" class="prod-card" data-tags="adhesives">
+        <div class="img contain"><img src="../img/actino-gel-liquid.jpg" alt="Actino Gel / Liquid" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/actino-gel-liquid.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Actino Gel / Liquid</h3><div class="meta">Agent de mordançage à l’acide phosphorique 37 % · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-microgel-sf.html" class="prod-card" data-tags="adhesives">
+        <div class="img contain"><img src="../img/microgel-sf.jpg" alt="Microgel SF" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/microgel-sf.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Microgel SF</h3><div class="meta">Gel de mordançage sans silice · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-crysta-adhesive-primer.html" class="prod-card" data-tags="ortho">
+        <div class="img contain"><img src="../img/fusion-crysta-adhesive-primer.jpg" alt="Fusion Crysta Adhesive Primer" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-crysta-adhesive-primer.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Crysta Adhesive Primer</h3><div class="meta">Primer orthodontique auto-mordançant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-crysta-adhesive.html" class="prod-card" data-tags="ortho">
+        <div class="img contain"><img src="../img/fusion-crysta-adhesive.jpg" alt="Fusion Crysta Adhesive" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-crysta-adhesive.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Crysta Adhesive</h3><div class="meta">Adhésif orthodontique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-crysta-orthodontic-adhesive-kit.html" class="prod-card" data-tags="ortho">
+        <div class="img contain"><img src="../img/fusion-crysta-orthodontic-adhesive-kit.jpg" alt="Fusion Crysta Orthodontic Adhesive Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-crysta-orthodontic-adhesive-kit.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Crysta Orthodontic Adhesive Kit</h3><div class="meta">Kit de collage orthodontique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-magma-nt.html" class="prod-card" data-tags="composites">
+        <div class="img contain"><img src="../img/magma-nt.jpg" alt="Magma NT" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/magma-nt.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Magma NT</h3><div class="meta">Matériau de restauration universel nano-céramique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-i-seal.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/fusion-i-seal.jpg" alt="Fusion I-Seal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-i-seal.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion I-Seal</h3><div class="meta">Ciment composite verre ionomère photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-cal-lc.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/cal-lc.jpg" alt="Cal LC" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cal-lc.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Cal LC</h3><div class="meta">Protecteur pulpaire à l’hydroxyde de calcium photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-apacal-art.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/apacal-art.jpg" alt="ApaCal ART" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/apacal-art.jpg'" loading="lazy"></div>
+        <div class="body"><h3>ApaCal ART</h3><div class="meta">Protecteur pulpaire / liner photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-calultra.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/calultra.jpg" alt="CalUltra" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/calultra.jpg'" loading="lazy"></div>
+        <div class="body"><h3>CalUltra</h3><div class="meta">Protecteur de cavité à l’hydroxyde de calcium · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-ultra-dc.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/fusion-ultra-dc.jpg" alt="Fusion Ultra D/C" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-ultra-dc.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Ultra D/C</h3><div class="meta">Ciment de scellement résine à double polymérisation · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-ultra-dc-universal.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/fusion-ultra-dc-universal.jpg" alt="Fusion Ultra D/C Universal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-ultra-dc-universal.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Ultra D/C Universal</h3><div class="meta">Ciment résine universel auto-adhésif · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-self-lute.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/fusion-self-lute.jpg" alt="Fusion Self Lute" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-self-lute.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Self Lute</h3><div class="meta">Ciment résine auto-polymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-micron-superior.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/micron-superior.jpg" alt="Micron Superior" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Micron Superior</h3><div class="meta">Verre ionomère de restauration (mélange manuel) · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-micron-luting.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/micron-luting.jpg" alt="Micron Luting" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-luting.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Micron Luting</h3><div class="meta">Ciment de scellement verre ionomère · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-micron-silver.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/micron-silver.jpg" alt="Micron Silver" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-silver.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Micron Silver</h3><div class="meta">Verre ionomère à alliage d’argent · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-micron-bioactive.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/micron-bioactive.jpg" alt="Micron Bioactive" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-bioactive.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Micron Bioactive</h3><div class="meta">Verre ionomère à l’hydroxyapatite · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-micron-dentin-conditioner.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/micron-dentin-conditioner.jpg" alt="Micron Dentin Conditioner" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-dentin-conditioner.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Micron Dentin Conditioner</h3><div class="meta">Conditionneur à l’acide polyacrylique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-poly-zinc-plus.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/poly-zinc-plus.jpg" alt="Poly Zinc +" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/poly-zinc-plus.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Poly Zinc +</h3><div class="meta">Ciment polycarboxylate de zinc · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-zinc-f-plus.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/zinc-f-plus.jpg" alt="Zinc F+" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/zinc-f-plus.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Zinc F+</h3><div class="meta">Ciment au phosphate de zinc · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-zinconol.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/zinconol.jpg" alt="Zinconol" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/zinconol.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Zinconol</h3><div class="meta">Ciment ZOE renforcé aux polymères (IRM) · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-zitemp.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/zitemp.jpg" alt="Zitemp" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/zitemp.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Zitemp</h3><div class="meta">Ciment ZOE à prise rapide · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-orafil-g-plus.html" class="prod-card" data-tags="temporary">
+        <div class="img contain"><img src="../img/orafil-g-plus.jpg" alt="Orafil G / Orafil Plus" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/orafil-g-plus.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Orafil G / Orafil Plus</h3><div class="meta">Matériau d’obturation provisoire · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-orafil-lc.html" class="prod-card" data-tags="temporary">
+        <div class="img contain"><img src="../img/orafil-lc.jpg" alt="Orafil LC" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/orafil-lc.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Orafil LC</h3><div class="meta">Obturation provisoire photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-oratemp-ne.html" class="prod-card" data-tags="temporary">
+        <div class="img contain"><img src="../img/oratemp-ne.jpg" alt="Oratemp NE" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/oratemp-ne.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Oratemp NE</h3><div class="meta">Ciment de scellement provisoire sans eugénol · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-oratemp-cb.html" class="prod-card" data-tags="temporary">
+        <div class="img contain"><img src="../img/oratemp-cb.jpg" alt="Oratemp C&amp;B" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/oratemp-cb.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Oratemp C&amp;B</h3><div class="meta">Matériau provisoire pour couronnes et bridges · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-zinc-oxide-powder.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/zinc-oxide-powder.jpg" alt="Poudre d’oxyde de zinc" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/zinc-oxide-powder.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Poudre d’oxyde de zinc</h3><div class="meta">Poudre d’oxyde de zinc extra pure · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-dolo-edta-gel.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/dolo-edta-gel.jpg" alt="Dolo EDTA Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/dolo-edta-gel.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Dolo EDTA Gel</h3><div class="meta">Gel EDTA 17 % pour canaux radiculaires · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-edta-solution.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/edta-solution.jpg" alt="Solution d’EDTA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/edta-solution.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Solution d’EDTA</h3><div class="meta">Solution d’EDTA 17 % · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-citrogen-gel.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/citrogen-gel.jpg" alt="Citrogen Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/citrogen-gel.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Citrogen Gel</h3><div class="meta">Gel d’acide citrique 20 % · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-citrogen.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/citrogen.jpg" alt="Citrogen" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/citrogen.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Citrogen</h3><div class="meta">Liquide d’acide citrique 20 % · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-calcigel.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/calcigel.jpg" alt="Calcigel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/calcigel.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Calcigel</h3><div class="meta">Pâte d’hydroxyde de calcium · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-calcium-hydroxide-powder.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/calcium-hydroxide-powder.jpg" alt="Poudre d’hydroxyde de calcium" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/calcium-hydroxide-powder.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Poudre d’hydroxyde de calcium</h3><div class="meta">Poudre d’hydroxyde de calcium extra fine · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-cerafill-rcs.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/cerafill-rcs.jpg" alt="Cerafill RCS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cerafill-rcs.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Cerafill RCS</h3><div class="meta">Matériau d’obturation canalaire bio-céramique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-cerafill-putty.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/cerafill-putty.jpg" alt="Cerafill Putty" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cerafill-putty.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Cerafill Putty</h3><div class="meta">Pâte de réparation bio-céramique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-calapex.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/calapex.jpg" alt="CalApex" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/calapex.jpg'" loading="lazy"></div>
+        <div class="body"><h3>CalApex</h3><div class="meta">Ciment canalaire à l’hydroxyde de calcium · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-zical-ultra.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/zical-ultra.jpg" alt="Zical Ultra" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/zical-ultra.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Zical Ultra</h3><div class="meta">Ciment canalaire ZOE · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-carvene.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/carvene.jpg" alt="Carvene" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/carvene.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Carvene</h3><div class="meta">Solvant de gutta-percha · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-pulp-x.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/pulp-x.jpg" alt="Pulp-X" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/pulp-x.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Pulp-X</h3><div class="meta">Dévitalisant pulpaire · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-eposolv.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/eposolv.jpg" alt="EpoSolv" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/eposolv.jpg'" loading="lazy"></div>
+        <div class="body"><h3>EpoSolv</h3><div class="meta">Solvant pour sealers résineux · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fusion-nano-coat.html" class="prod-card" data-tags="varnishes">
+        <div class="img contain"><img src="../img/fusion-nano-coat.jpg" alt="Fusion Nano Coat" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-nano-coat.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion Nano Coat</h3><div class="meta">Vernis protecteur photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-copal-f.html" class="prod-card" data-tags="varnishes">
+        <div class="img contain"><img src="../img/copal-f.jpg" alt="Copal-F" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/copal-f.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Copal-F</h3><div class="meta">Vernis cavitaire au fluor · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-fluorodip-bioactive.html" class="prod-card" data-tags="varnishes">
+        <div class="img contain"><img src="../img/fluorodip-bioactive.jpg" alt="FluoroDip Bioactive" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fluorodip-bioactive.jpg'" loading="lazy"></div>
+        <div class="body"><h3>FluoroDip Bioactive</h3><div class="meta">Vernis fluoré au bioverre · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-shield-activ.html" class="prod-card" data-tags="varnishes">
+        <div class="img contain"><img src="../img/shield-activ.jpg" alt="Shield Activ" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/shield-activ.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Shield Activ</h3><div class="meta">Désensibilisant dentinaire · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-bioenamel-gel.html" class="prod-card" data-tags="varnishes">
+        <div class="img contain"><img src="../img/bioenamel-gel.jpg" alt="BioEnamel Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/bioenamel-gel.jpg'" loading="lazy"></div>
+        <div class="body"><h3>BioEnamel Gel</h3><div class="meta">Gel reminéralisant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-hiflex-rr.html" class="prod-card" data-tags="lab">
+        <div class="img contain"><img src="../img/hiflex-rr.jpg" alt="Hiflex RR" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/hiflex-rr.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Hiflex RR</h3><div class="meta">Résine auto-polymérisable pour réparation et rebasage de prothèses · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-hiflex-h.html" class="prod-card" data-tags="lab">
+        <div class="img contain"><img src="../img/hiflex-h.jpg" alt="Hiflex H" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/hiflex-h.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Hiflex H</h3><div class="meta">Base prothétique polymérisée à chaud · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-silane-x.html" class="prod-card" data-tags="ceramic">
+        <div class="img contain"><img src="../img/silane-x.jpg" alt="Silane-X" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/silane-x.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Silane-X</h3><div class="meta">Agent de couplage silane · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-cera-etch.html" class="prod-card" data-tags="ceramic">
+        <div class="img contain"><img src="../img/cera-etch.jpg" alt="Cera Etch" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cera-etch.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Cera Etch</h3><div class="meta">Gel de mordançage de la porcelaine · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-platina-hi-gloss.html" class="prod-card" data-tags="finishing">
+        <div class="img contain"><img src="../img/platina-hi-gloss.jpg" alt="Platina Hi-Gloss" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/platina-hi-gloss.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Platina Hi-Gloss</h3><div class="meta">Pâte de polissage pour composite · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-spectra.html" class="prod-card" data-tags="finishing">
+        <div class="img contain"><img src="../img/spectra.jpg" alt="Spectra" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/spectra.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Spectra</h3><div class="meta">Pâte prophylactique · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-reveal.html" class="prod-card" data-tags="finishing">
+        <div class="img contain"><img src="../img/reveal.jpg" alt="Reveal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/reveal.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Reveal</h3><div class="meta">Révélateur de caries · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-gingiva-shield-vlc.html" class="prod-card" data-tags="finishing">
+        <div class="img contain"><img src="../img/gingiva-shield-vlc.jpg" alt="Gingiva Shield VLC" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/gingiva-shield-vlc.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Gingiva Shield VLC</h3><div class="meta">Barrière gingivale photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-ultra-dry.html" class="prod-card" data-tags="finishing">
+        <div class="img contain"><img src="../img/ultra-dry.jpg" alt="Ultra Dry" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/ultra-dry.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Ultra Dry</h3><div class="meta">Agent de séchage · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-accusil-putty.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/accusil-putty.jpg" alt="Accusil Putty" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/accusil-putty.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Accusil Putty</h3><div class="meta">Matériau d’empreinte VPS putty · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-accusil-light-body.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/accusil-light-body.jpg" alt="Accusil Light Body" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/accusil-light-body.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Accusil Light Body</h3><div class="meta">Matériau d’empreinte VPS light body · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-accusil-combo-kit.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/accusil-combo-kit.jpg" alt="Accusil Combo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/accusil-combo-kit.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Accusil Combo Kit</h3><div class="meta">Kit d’empreinte VPS (putty + light body) · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-accusil-heavy-body.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/accusil-heavy-body.jpg" alt="Accusil Heavy Body" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/accusil-heavy-body.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Accusil Heavy Body</h3><div class="meta">Matériau d’empreinte VPS heavy body · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-accusil-monophase.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/accusil-monophase.jpg" alt="Accusil Monophase" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/accusil-monophase.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Accusil Monophase</h3><div class="meta">Matériau d’empreinte VPS monophase · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-alfina.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/alfina.jpg" alt="Alfina" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/alfina.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Alfina</h3><div class="meta">Matériau d’empreinte alginate · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-hiflex-impression-paste.html" class="prod-card" data-tags="impression">
+        <div class="img contain"><img src="../img/hiflex-impression-paste.jpg" alt="Hiflex Impression Paste" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/hiflex-impression-paste.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Hiflex Impression Paste</h3><div class="meta">Pâte d’empreinte pour édentés · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-prevest-model-pro.html" class="prod-card" data-tags="3d">
+        <div class="img contain"><img src="../img/prevest-model-pro.jpg" alt="Prevest Model Pro" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/prevest-model-pro.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Prevest Model Pro</h3><div class="meta">Résine d’impression 3D pour modèles · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-prevest-surgical-guide.html" class="prod-card" data-tags="3d">
+        <div class="img contain"><img src="../img/prevest-surgical-guide.jpg" alt="Prevest Surgical Guide" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/prevest-surgical-guide.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Prevest Surgical Guide</h3><div class="meta">Résine 3D pour guides chirurgicaux · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-prevest-cb-interim.html" class="prod-card" data-tags="3d">
+        <div class="img contain"><img src="../img/prevest-cb-interim.jpg" alt="Prevest C&amp;B Interim" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/prevest-cb-interim.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Prevest C&amp;B Interim</h3><div class="meta">Résine 3D pour couronnes et bridges provisoires · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      </a>
+      <a href="product-prevest-burn-out.html" class="prod-card" data-tags="3d">
+        <div class="img contain"><img src="../img/prevest-burn-out.jpg" alt="Prevest Burn Out" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/prevest-burn-out.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Prevest Burn Out</h3><div class="meta">Résine d’impression 3D calcinable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
     </div>
   </main>
@@ -117,6 +398,8 @@
   </footer>
 
   <script src="../js/i18n-fr.js"></script>
+  <script src="../js/search-fr.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
   <script>
     const chips = document.querySelectorAll('.filter-chip');

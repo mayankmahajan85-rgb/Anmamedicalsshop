@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html">Produits médicaux ▾</a><div class="dd"><a href="dental-products.html">Produits dentaires</a><a href="general-products.html">Produits généraux</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Rechercher des produits" placeholder="Search products">
+      <button type="submit" aria-label="Rechercher">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Langue" aria-haspopup="true">🌐 FR ▾</button>
@@ -52,8 +57,8 @@
         </div>
       </div>
       <div class="hero-visual dual">
-        <a href="ladies.html"><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206439_internet_8.jpg" alt="Tunique femme MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" width="320" height="400"><span>Dames</span></a>
-        <a href="gents.html"><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206457_internet_6.jpg" alt="Tunique homme LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" width="320" height="400"><span>Hommes</span></a>
+        <a href="ladies.html"><img src="../img/meliana.jpg" alt="Tunique femme MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" width="320" height="400"><span>Dames</span></a>
+        <a href="gents.html"><img src="../img/lens.jpg" alt="Tunique homme LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" width="320" height="400"><span>Hommes</span></a>
       </div>
     </section>
 
@@ -70,19 +75,19 @@
       <div class="section-header"><h2>Notre gamme</h2></div>
       <div class="prod-grid">
       <a href="product-meliana.html" class="prod-card">
-        <div class="img"><span class="badge">Nouveau</span><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206439_internet_8.jpg" alt="Tunique femme MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" loading="lazy"></div>
+        <div class="img"><span class="badge">Nouveau</span><img src="../img/meliana.jpg" alt="Tunique femme MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" loading="lazy"></div>
         <div class="body"><h3>Tunique femme MELIANA</h3><div class="meta">DualSoft · Dames</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-lens.html" class="prod-card">
-        <div class="img"><span class="badge">Nouveau</span><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206457_internet_6.jpg" alt="Tunique homme LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" loading="lazy"></div>
+        <div class="img"><span class="badge">Nouveau</span><img src="../img/lens.jpg" alt="Tunique homme LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" loading="lazy"></div>
         <div class="body"><h3>Tunique homme LENS</h3><div class="meta">DualSoft · Hommes</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-universal-composite-kit.jpg" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Composite nano-hybride · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       <a href="product-fusion-bond-7.html" class="prod-card" data-tags="adhesives">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Bond_7-1.webp?v=1779449405&width=800" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-bond-7.jpg" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Bond 7</h3><div class="meta">Adhésif auto-mordançant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       </div>
@@ -124,6 +129,8 @@
   </footer>
 
   <script src="../js/i18n-fr.js"></script>
+  <script src="../js/search-fr.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
 </body>
 </html>

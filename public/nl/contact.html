@@ -18,6 +18,11 @@
       <div class="nav-dd"><a href="medical-products.html">Medische producten ▾</a><div class="dd"><a href="dental-products.html">Dentale producten</a><a href="general-products.html">Algemene producten</a></div></div>
       <a href="contact.html" class="active">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Producten zoeken" placeholder="Search products">
+      <button type="submit" aria-label="Zoeken">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Taal" aria-haspopup="true">🌐 NL ▾</button>
@@ -85,6 +90,8 @@
   </footer>
 
   <script src="../js/i18n-nl.js"></script>
+  <script src="../js/search-nl.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
 </body>
 </html>

@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html">Medische producten ▾</a><div class="dd"><a href="dental-products.html">Dentale producten</a><a href="general-products.html">Algemene producten</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Producten zoeken" placeholder="Search products">
+      <button type="submit" aria-label="Zoeken">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Taal" aria-haspopup="true">🌐 NL ▾</button>
@@ -45,11 +50,11 @@
     <div class="crumb"><a href="index.html">Home</a> › Medische kleding › <a href="ladies.html">Dames</a> › Damestuniek MELIANA</div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-img"><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206439_internet_8.jpg" alt="Damestuniek MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" id="mainImg" width="600" height="750"></div>
+        <div class="pdp-img"><img src="../img/meliana.jpg" alt="Damestuniek MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" id="mainImg" width="600" height="750"></div>
         
       </div>
       <div class="pdp">
-        <h1>Damestuniek MELIANA – DualSoft</h1>
+        <h1>Ladies tunic MELIANA – DualSoft</h1>
         <div class="sku">DualSoft · Dames · Art.nr. AM-L-001</div>
         <div class="price-req price-req-lg">Prijs op aanvraag <small>– het ANMA Medicals Team neemt contact met u op met een aanbod</small></div>
         <p class="lead">Moderne, zachte damestuniek uit de DualSoft-lijn voor een comfortabele werkdag in klinieken, praktijken en apotheken.</p>
@@ -73,15 +78,15 @@
       <div class="section-header"><h2>Misschien ook interessant</h2><a href="ladies.html">Bekijk alles →</a></div>
       <div class="prod-grid">
       <a href="product-lens.html" class="prod-card">
-        <div class="img"><span class="badge">Nieuw</span><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206457_internet_6.jpg" alt="Herentuniek LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" loading="lazy"></div>
+        <div class="img"><span class="badge">Nieuw</span><img src="../img/lens.jpg" alt="Herentuniek LENS" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/lens.jpg'" loading="lazy"></div>
         <div class="body"><h3>Herentuniek LENS</h3><div class="meta">DualSoft · Heren</div><div class="price-req">Prijs op aanvraag</div></div>
       </a>
       <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-universal-composite-kit.jpg" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Nano-hybride composiet · Prevest DenPro</div><div class="price-req">Prijs op aanvraag</div></div>
       </a>
       <a href="product-fusion-flo-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion_Flo_Kit-2.webp?v=1780481613&width=800" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
+        <div class="img contain"><img src="../img/fusion-flo-kit.jpg" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
         <div class="body"><h3>Fusion Flo Kit</h3><div class="meta">Flowable composiet · Prevest DenPro</div><div class="price-req">Prijs op aanvraag</div></div>
       </a>
       </div>
@@ -114,9 +119,10 @@
   </footer>
 
   <script src="../js/i18n-nl.js"></script>
+  <script src="../js/search-nl.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
-  <script>window.PRODUCT = {"id": "AM-L-001", "slug": "meliana", "name": "Damestuniek MELIANA – DualSoft", "photo": "https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206439_internet_8.jpg", "colors": [["Marineblauw", "#1b2f5b", "navy"], ["Petrol", "#0f6b73", "petrol"], ["Bordeaux", "#7a1f3d", "bordeaux"], ["Zwart", "#161616", "black"], ["Wit", "#ffffff", "white"], ["Lichtgrijs", "#c9ced2", "light-grey"]], "sizes": ["XS", "S", "M", "L", "XL", "XXL", "3XL"], "options": []};</script>
-  <script src="../js/recolor.js"></script>
+  <script>window.PRODUCT = {"id": "AM-L-001", "slug": "meliana", "name": "Ladies tunic MELIANA – DualSoft", "photo": null, "colors": [["Marineblauw", "#1b2f5b", "navy"], ["Petrol", "#0f6b73", "petrol"], ["Bordeaux", "#7a1f3d", "bordeaux"], ["Zwart", "#161616", "black"], ["Wit", "#ffffff", "white"], ["Lichtgrijs", "#c9ced2", "light-grey"]], "sizes": ["XS", "S", "M", "L", "XL", "XXL", "3XL"], "options": []};</script>
   <script src="../js/product.js"></script>
 </body>
 </html>

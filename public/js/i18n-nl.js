@@ -32,5 +32,15 @@ window.I18N = {
  "ref": "referentie",
  "thanks2": "Het ANMA Medicals Team neemt zo spoedig mogelijk contact met u op voor meer details om uw bestelling te verwerken.",
  "backHome": "Terug naar home",
+ "optional": "optioneel",
+ "searchPh": "Zoek producten",
+ "searchNone": "Geen producten gevonden voor",
+ "searchFor": "voor",
+ "searchProducts": "producten",
+ "searchProduct": "product",
+ "searchTry": "Probeer een andere term (naam, artikelnummer of REF) of neem contact met ons op: op aanvraag leveren wij meer producten.",
+ "searchAll": "Alle resultaten",
+ "priceReq": "Prijs op aanvraag",
+ "searchEmpty": "Typ een productnaam, artikelnummer of REF.",
  "lang": "nl"
 };

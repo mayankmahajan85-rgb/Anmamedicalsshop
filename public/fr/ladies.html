@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html">Produits médicaux ▾</a><div class="dd"><a href="dental-products.html">Produits dentaires</a><a href="general-products.html">Produits généraux</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Rechercher des produits" placeholder="Search products">
+      <button type="submit" aria-label="Rechercher">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Langue" aria-haspopup="true">🌐 FR ▾</button>
@@ -48,7 +53,7 @@
     <div class="results-count"><span id="count">1</span> produit</div>
     <div class="prod-grid" id="grid">
       <a href="product-meliana.html" class="prod-card">
-        <div class="img"><span class="badge">Nouveau</span><img src="https://www.7daysshop.nl/media/catalog/product/cache/f7763a65656886a6c3c8da05f65dd61a/2/0/206439_internet_8.jpg" alt="Tunique femme MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" loading="lazy"></div>
+        <div class="img"><span class="badge">Nouveau</span><img src="../img/meliana.jpg" alt="Tunique femme MELIANA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/meliana.jpg'" loading="lazy"></div>
         <div class="body"><h3>Tunique femme MELIANA</h3><div class="meta">DualSoft · Dames</div><div class="price-req">Prix sur demande</div></div>
       </a>
     </div>
@@ -80,6 +85,8 @@
   </footer>
 
   <script src="../js/i18n-fr.js"></script>
+  <script src="../js/search-fr.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
 </body>
 </html>

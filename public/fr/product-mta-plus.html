@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html" class="active">Produits médicaux ▾</a><div class="dd"><a href="dental-products.html">Produits dentaires</a><a href="general-products.html">Produits généraux</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Rechercher des produits" placeholder="Search products">
+      <button type="submit" aria-label="Rechercher">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Langue" aria-haspopup="true">🌐 FR ▾</button>
@@ -45,8 +50,8 @@
     <div class="crumb"><a href="index.html">Accueil</a> › Produits médicaux › <a href="dental-products.html">Produits dentaires</a> › MTA Plus</div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-1.webp?v=1780555598&width=800" alt="MTA Plus" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/mta-plus.jpg'" id="mainImg" width="600" height="750"></div>
-        <div class="thumbs" id="thumbs"><button type="button" class="on" data-src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-1.webp?v=1780555598&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-1.webp?v=1780555598&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-2.webp?v=1780555598&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-2.webp?v=1780555598&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-3.webp?v=1780555598&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/MTA-Plus-3.webp?v=1780555598&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button></div>
+        <div class="pdp-img contain"><img src="../img/mta-plus.jpg" alt="MTA Plus" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/mta-plus.jpg'" id="mainImg" width="600" height="750"></div>
+        
       </div>
       <div class="pdp">
         <h1>MTA Plus</h1>
@@ -63,6 +68,7 @@
           <li>Le prix et le délai de livraison figurent dans votre offre personnalisée</li>
           <li>L’équipe ANMA Medicals vous contactera</li>
           <li>Réservé à un usage professionnel par les dentistes et professionnels de santé</li>
+          <li>Dispositif médical marqué CE · fabricant : Prevest DenPro Limited</li>
         </ul>
         <details open><summary>Description</summary><p>Agrégat de trioxyde minéral (MTA) pour la thérapie pulpaire vitale et les procédures endodontiques. Poudre plus fine pour un mélange, une manipulation et une mise en place plus faciles. Formule non cytotoxique et antimicrobienne, biocompatible, à haute résistance à la compression et bonne étanchéité, susceptible d’induire la formation d’une barrière de tissu dur.</p></details>
         <details><summary>Indications</summary><p>Fond de cavité/base et coiffage pulpaire · pulpotomies et obturation/scellement · apexification et obturation rétrograde · réparation des perforations et résorption radiculaire.</p></details>
@@ -74,21 +80,21 @@
     <section class="section" style="margin-top:56px">
       <div class="section-header"><h2>Cela pourrait aussi vous intéresser</h2><a href="dental-products.html">Tout voir →</a></div>
       <div class="prod-grid">
-      <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Composite nano-hybride · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-zinc-oxide-powder.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/zinc-oxide-powder.jpg" alt="Poudre d’oxyde de zinc" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/zinc-oxide-powder.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Poudre d’oxyde de zinc</h3><div class="meta">Poudre d’oxyde de zinc extra pure · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
-      <a href="product-fusion-flo-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion_Flo_Kit-2.webp?v=1780481613&width=800" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Flo Kit</h3><div class="meta">Composite fluide · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-dolo-edta-gel.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/dolo-edta-gel.jpg" alt="Dolo EDTA Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/dolo-edta-gel.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Dolo EDTA Gel</h3><div class="meta">Gel EDTA 17 % pour canaux radiculaires · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
-      <a href="product-fusion-bond-7.html" class="prod-card" data-tags="adhesives">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Bond_7-1.webp?v=1779449405&width=800" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Bond 7</h3><div class="meta">Adhésif auto-mordançant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-edta-solution.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/edta-solution.jpg" alt="Solution d’EDTA" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/edta-solution.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Solution d’EDTA</h3><div class="meta">Solution d’EDTA 17 % · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
-      <a href="product-micron-superior-capsule.html" class="prod-card" data-tags="cements">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-1.webp?v=1780480977&width=800" alt="Micron Superior Capsule" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior-capsule.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Micron Superior Capsule</h3><div class="meta">Ciment verre ionomère · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-citrogen-gel.html" class="prod-card" data-tags="endo">
+        <div class="img contain"><img src="../img/citrogen-gel.jpg" alt="Citrogen Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/citrogen-gel.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Citrogen Gel</h3><div class="meta">Gel d’acide citrique 20 % · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       </div>
     </section>
@@ -120,9 +126,10 @@
   </footer>
 
   <script src="../js/i18n-fr.js"></script>
+  <script src="../js/search-fr.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
-  <script>window.PRODUCT = {"id": "AM-D-109", "slug": "mta-plus", "name": "MTA Plus", "photo": null, "colors": null, "sizes": null, "options": [{"label": "Conditionnement", "values": ["Pack d’essai – 1 pot de poudre de 1 g + 2 cc de gel", "Pack Intro – 1 pot de poudre de 2 g + 2 cc de gel"]}]};</script>
-  <script src="../js/recolor.js"></script>
+  <script>window.PRODUCT = {"id": "AM-D-109", "slug": "mta-plus", "name": "MTA Plus", "photo": null, "colors": null, "sizes": null, "options": [{"label": "Conditionnement", "values": ["Pack d’essai – 1 pot de poudre de 1 g + 2 cc de gel", "Pack Intro – 1 pot de poudre de 2 g + 2 cc de gel"], "optional": false}]};</script>
   <script src="../js/product.js"></script>
 </body>
 </html>

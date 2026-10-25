@@ -19,6 +19,11 @@
       <div class="nav-dd"><a href="medical-products.html" class="active">Produits médicaux ▾</a><div class="dd"><a href="dental-products.html">Produits dentaires</a><a href="general-products.html">Produits généraux</a></div></div>
       <a href="contact.html">Contact</a>
     </nav>
+    <form class="search" id="siteSearch" role="search" action="search.html" method="get">
+      <input type="search" name="q" autocomplete="off" aria-label="Rechercher des produits" placeholder="Search products">
+      <button type="submit" aria-label="Rechercher">🔍</button>
+      <div class="sugg" id="sugg" hidden></div>
+    </form>
     <div class="header-actions">
       <div class="lang" id="langSwitch">
         <button type="button" class="lang-btn" aria-label="Langue" aria-haspopup="true">🌐 FR ▾</button>
@@ -45,8 +50,8 @@
     <div class="crumb"><a href="index.html">Accueil</a> › Produits médicaux › <a href="dental-products.html">Produits dentaires</a> › Micron Superior Capsule</div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-1.webp?v=1780480977&width=800" alt="Micron Superior Capsule" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior-capsule.jpg'" id="mainImg" width="600" height="750"></div>
-        <div class="thumbs" id="thumbs"><button type="button" class="on" data-src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-1.webp?v=1780480977&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-1.webp?v=1780480977&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-2.webp?v=1780480977&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-2.webp?v=1780480977&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-3.webp?v=1780480977&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-3.webp?v=1780480977&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button><button type="button" class="" data-src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-4.webp?v=1780480977&width=800"><img src="https://www.prevestdirect.com/cdn/shop/files/Micron-Superior-Capsule-4.webp?v=1780480977&width=800" alt="" referrerpolicy="no-referrer" loading="lazy"></button></div>
+        <div class="pdp-img contain"><img src="../img/micron-superior-capsule.jpg" alt="Micron Superior Capsule" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/micron-superior-capsule.jpg'" id="mainImg" width="600" height="750"></div>
+        
       </div>
       <div class="pdp">
         <h1>Micron Superior Capsule</h1>
@@ -63,6 +68,7 @@
           <li>Le prix et le délai de livraison figurent dans votre offre personnalisée</li>
           <li>L’équipe ANMA Medicals vous contactera</li>
           <li>Réservé à un usage professionnel par les dentistes et professionnels de santé</li>
+          <li>Dispositif médical marqué CE · fabricant : Prevest DenPro Limited</li>
         </ul>
         <details open><summary>Description</summary><p>Ciment verre ionomère de restauration de type 2 en capsules prédosées pour dents temporaires et permanentes, avec libération prolongée de fluor et forte résistance à la compression.</p></details>
         <details><summary>Indications</summary><p>Restauration des dents temporaires · reconstitution corono-radiculaire · restauration des cavités de classes III, V et classe I limitée.</p></details>
@@ -74,21 +80,21 @@
     <section class="section" style="margin-top:56px">
       <div class="section-header"><h2>Cela pourrait aussi vous intéresser</h2><a href="dental-products.html">Tout voir →</a></div>
       <div class="prod-grid">
-      <a href="product-fusion-universal-composite-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Universal-Composite-Kit-1.webp?v=1780482460&width=800" alt="Fusion Universal Composite Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-universal-composite-kit.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Universal Composite Kit</h3><div class="meta">Composite nano-hybride · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-fusion-i-seal.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/fusion-i-seal.jpg" alt="Fusion I-Seal" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-i-seal.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Fusion I-Seal</h3><div class="meta">Ciment composite verre ionomère photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
-      <a href="product-fusion-flo-kit.html" class="prod-card" data-tags="composites">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion_Flo_Kit-2.webp?v=1780481613&width=800" alt="Fusion Flo Kit" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-flo-kit.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Flo Kit</h3><div class="meta">Composite fluide · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-cal-lc.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/cal-lc.jpg" alt="Cal LC" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cal-lc.jpg'" loading="lazy"></div>
+        <div class="body"><h3>Cal LC</h3><div class="meta">Protecteur pulpaire à l’hydroxyde de calcium photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
-      <a href="product-fusion-bond-7.html" class="prod-card" data-tags="adhesives">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Fusion-Bond_7-1.webp?v=1779449405&width=800" alt="Fusion Bond 7" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/fusion-bond-7.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Fusion Bond 7</h3><div class="meta">Adhésif auto-mordançant · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-apacal-art.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/apacal-art.jpg" alt="ApaCal ART" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/apacal-art.jpg'" loading="lazy"></div>
+        <div class="body"><h3>ApaCal ART</h3><div class="meta">Protecteur pulpaire / liner photopolymérisable · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
-      <a href="product-hemostal-gel.html" class="prod-card" data-tags="hemostatics">
-        <div class="img contain"><img src="https://www.prevestdirect.com/cdn/shop/files/Hemostal-Gel-1.webp?v=1780483540&width=800" alt="Hemostal Gel" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/hemostal-gel.jpg'" loading="lazy"></div>
-        <div class="body"><h3>Hemostal Gel</h3><div class="meta">Gel de rétraction gingivale · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
+      <a href="product-calultra.html" class="prod-card" data-tags="cements">
+        <div class="img contain"><img src="../img/calultra.jpg" alt="CalUltra" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/calultra.jpg'" loading="lazy"></div>
+        <div class="body"><h3>CalUltra</h3><div class="meta">Protecteur de cavité à l’hydroxyde de calcium · Prevest DenPro</div><div class="price-req">Prix sur demande</div></div>
       </a>
       </div>
     </section>
@@ -120,9 +126,10 @@
   </footer>
 
   <script src="../js/i18n-fr.js"></script>
+  <script src="../js/search-fr.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/cart.js"></script>
-  <script>window.PRODUCT = {"id": "AM-D-104", "slug": "micron-superior-capsule", "name": "Micron Superior Capsule", "photo": null, "colors": null, "sizes": null, "options": [{"label": "Teinte", "values": ["A1", "A2", "A3"]}, {"label": "Conditionnement", "values": ["Boîte de 10 capsules"]}]};</script>
-  <script src="../js/recolor.js"></script>
+  <script>window.PRODUCT = {"id": "AM-D-104", "slug": "micron-superior-capsule", "name": "Micron Superior Capsule", "photo": null, "colors": null, "sizes": null, "options": [{"label": "Teinte", "values": ["A1", "A2", "A3"], "optional": false}, {"label": "Conditionnement", "values": ["Boîte de 10 capsules"], "optional": false}]};</script>
   <script src="../js/product.js"></script>
 </body>
 </html>
