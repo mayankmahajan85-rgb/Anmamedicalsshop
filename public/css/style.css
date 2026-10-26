@@ -825,3 +825,7 @@ header { gap: 14px; flex-wrap: wrap; }
 .search-big input { padding: 12px 110px 12px 16px; font-size: 16px; }
 .search-big button { background: var(--acc); color: var(--accfg); border-radius: 999px; padding: 8px 18px; font-size: 14px; font-weight: 600; right: 5px; }
 @media (max-width: 900px) { .search { order: 5; flex: 1 1 100%; max-width: none; } .sugg { min-width: 0; } }
+
+/* keep low-resolution catalogue photos from being stretched beyond ~2x */
+.pdp-img.contain img { max-width: 520px; margin: 0 auto; display: block; }
+.pdp-img img, .prod-card .img img { image-rendering: auto; }
